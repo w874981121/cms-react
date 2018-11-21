@@ -11,11 +11,13 @@
   "dependencies": {
     "element-react": "^1.4.24",
     "element-theme-default": "^1.4.13",
+    "node-sass": "^4.10.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "sass-loader": "^7.1.0"
   },
   "eslintConfig": {
     "extends": "react-app"
