@@ -1,4 +1,42 @@
 .app{
   width: 100%;
-  background: aqua;
+  height: 100%;
+  position: relative;
+  .app_top{
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+  }
+  .app_center{
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    display: flex;
+    border-top:1px solid #cccccc;
+    border-bottom:1px solid #cccccc;
+    .app_left{
+      width: 200px;
+      height: 100%;
+      float: left;
+      border-right:1px solid #cccccc;
+      z-index: 9;
+    }
+    .app_content{
+      height: 100%;
+      width: 100%;
+      padding-left: 200px;
+      margin-left: -200px;
+      box-sizing: border-box;
+    }
+  }
+  .footer{
+    height: 30px;
+    line-height: 30px;
+    position:absolute;
+    bottom: 0;
+    text-align: center;
+  }
 }
