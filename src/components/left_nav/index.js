@@ -9,8 +9,8 @@ export default class LeftNav extends Component{
             <div>
                 <ul>
                     <li><NavLink className="" to="/"></NavLink></li>
-                    <li><NavLink to="/uploadfile">文件上传</NavLink></li>
                     <li><NavLink to="/uploadimg">图片上传</NavLink></li>
+                    <li><NavLink to="/uploadfile">文件上传</NavLink></li>
                 </ul>
             </div>
         )
