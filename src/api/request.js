@@ -49,7 +49,6 @@ class Request {
             // 它会通过then或者catch
             transformResponse: [function (data) {
                 // 可以对data做任何操作
-
                 return data;
             }],
             withCredentials: false,
@@ -84,7 +83,6 @@ class Request {
                             break;
                         default:
                             return Promise.reject(error)
-                            break;
                     }
                 }
                 return Promise.reject(error)

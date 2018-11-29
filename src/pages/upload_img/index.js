@@ -12,7 +12,7 @@ export default class UploadImg extends Component {
             <div>
                 <Upload
                     className="upload-demo"
-                    action="//jsonplaceholder.typicode.com/posts/"
+                    action="http://127.0.0.1:3000/api/upload"
                     onPreview={file => this.handlePreview(file)}
                     onRemove={(file, fileList) => this.handleRemove(file, fileList)}
                     fileList={fileList2}
