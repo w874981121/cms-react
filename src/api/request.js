@@ -99,9 +99,7 @@ class Request {
         }
         //区分入参方式
         if(method === "post"){
-            _req_config.data = qs.stringify({
-                name:"wangyanqi"
-            });
+            _req_config.data = qs.stringify(data);
         }else if(method === "get"){
             _req_config.params = data;
         }

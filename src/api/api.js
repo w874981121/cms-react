@@ -37,7 +37,6 @@ class ApiList {
           for (let f in a[k]) {
             let mode = a[k][f][0]  //请求类型
             let url = a[k][f][1];  //请求地址
-            // let cookie = a[k][f][2];   //是否携带cookie
             _this[f] = (params, header) => {
               let headers =  Object.assign({}, Herder, header);
                 return fn[mode](url, params, headers)

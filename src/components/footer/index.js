@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import './index.scss'
 
-export default class Footer extends Component {
+export default class Footers extends Component {
     
     render() {
         return (
