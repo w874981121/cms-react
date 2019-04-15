@@ -14,7 +14,9 @@
  * 测试环境：TEST
  *
  */
-const ES = "TEST";
+const ES = "TEST";  //本地测试环境切换
+// const ES = "PRODUCTION";  //测试生产环境切换
+
 const URL_LIST = {
     // 线上测试环境
     PRODUCTION: {
@@ -56,7 +58,6 @@ const INTERFACE = {
 
 const URL = URL_LIST[ES];
 module.exports = {
-    ES,
     URL,
     HEADER,
     INTERFACE

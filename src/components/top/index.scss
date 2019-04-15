@@ -1,3 +1,15 @@
 .top{
   color: #ffffff;
+  font-size: 20px;
+  .logoImg{
+    height: 40px;
+    line-height: 40px;
+    margin-top: 12px;
+    font-size: 18px;
+    img{
+      vertical-align: middle;
+      height: 100%;
+      margin-right: 12px;
+    }
+  }
 }

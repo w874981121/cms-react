@@ -10,7 +10,6 @@
 
 import Request from './request.js'
 import {
-  ES,
   URL,
   HEADER,
   INTERFACE
@@ -23,11 +22,10 @@ import {
  * 
  */
 class ApiList {
-  constructor(Url, Herder, Interface, ES){
-    this.ES = ES;
+  constructor(Url, Herder, Interface){
     let _this = this;
       return (function (a, b) {
-        console.log(new Date().getTime());
+        // console.log(new Date().getTime());
         for (let k in a) {
           let obj = {
             baseUrl: b[k],  //ip地址
@@ -49,7 +47,7 @@ class ApiList {
 
 
 
-const Api = new ApiList(URL, HEADER, INTERFACE, ES)
+const Api = new ApiList(URL, HEADER, INTERFACE)
 
 
 export default Api

@@ -3,9 +3,8 @@ import React, {Component} from 'react';
 import './index.scss'
 import Api from "../../../api/api"
 
-let is = 0;
+// let is = 0;
 export default class Resource extends Component {
-
     render() {
         return (
             <div className="resource">
@@ -22,11 +21,8 @@ export default class Resource extends Component {
                     删除
                 </button>
             </div>
-
-
         );
     }
-
     addResource(){
         Api.resource({name:"879898"});
     }

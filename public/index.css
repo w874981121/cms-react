@@ -1,20 +1,39 @@
 * {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-html, body{
-  height: 100%;
+html, body {
+    height: 100%;
+    fonr-size: 14px;
 }
-#root{
-  height: 100%;
+
+#root {
+    height: 100%;
 }
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.tc {
+    text-align: center;
+}
+/**
+
+标准模块间距20px
+*/
+.m20{
+    margin:20px;
+}
+.ml20{
+    margin-left: 20px;
+}
+.p20{
+    padding: 20px;
 }
