@@ -28,7 +28,7 @@ export default class LeftNav extends Component {
                         let list = item.list.map((tem,l) => {
                                 return (
                                 <Menu.Item key={keyFn(i,l)}>
-                                    <NavLink to="/resource">
+                                    <NavLink to={tem.url}>
                                         <Icon type={tem.icontype}/>
                                         {tem.name}
                                     </NavLink>

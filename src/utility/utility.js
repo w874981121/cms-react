@@ -6,29 +6,29 @@
  * */
 
 //页面titile修改
-export const setTitle = t => document.title = t ? t : "游冶郎-管理系统";
+const setTitle = t => document.title = t ? t : "游冶郎-管理系统";
 
 /**
  * 存储localStorage
  */
-export const setStore = (name, content) => {
+const setStore = (name, content) => {
     if (!name) return;
     if (typeof content !== 'string') {
-        content = JSON.stringify(content);
+        content = encodeURIComponent(JSON.stringify(content));
     }
     window.localStorage.setItem(name, content);
 };
 /**
  * 获取localStorage
  */
-export const getStore = (name) => {
+const getStore = (name) => {
     if (!name) return;
-    return window.localStorage.getItem(name);
+    return decodeURIComponent(window.localStorage.getItem(name));
 };
 /**
  * 清除localStorage
  */
-export const clearStore = () => {
+const clearStore = () => {
     window.localStorage.clear();
 };
 
@@ -42,7 +42,7 @@ export const clearStore = () => {
  * domain:域   域名
  * secure: 安全
  * */
-export const setCookie = (name, value, expires, path, domain, secure) => {
+const setCookie = (name, value, expires, path, domain, secure) => {
     var cookie = name + '=' + encodeURIComponent(value);
     if (expires) cookie += ';expires=' + expires.toGMTString();
     if (path) cookie += ';path=' + path;
@@ -54,7 +54,7 @@ export const setCookie = (name, value, expires, path, domain, secure) => {
 /**
  * 获取cookie值
  * */
-export const getCookie = (name) => {
+const getCookie = (name) => {
     if (!name) return;
     let reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)")
     let r = document.cookie.match(reg);
@@ -62,16 +62,26 @@ export const getCookie = (name) => {
     if (r !== null) {
         return context = r[2];
     }
-    return context == null || context === "" || context === "undefined" ? "" : encodeURIComponent(context);
+    return context == null || context === "" || context === "undefined" ? "" : decodeURIComponent(context);
 };
 
 /**
  * 获取url里的参数value (需要改进)
  * */
-export const getQueryStringByName = (name) => {
+const getQueryStringByName = (name) => {
     let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
     let r = window.location.search.substr(1).match(reg);
     let context = "";
     if (r !== null) context = r[2];
     return context == null || context === "" || context === "undefined" ? "" : context;
 };
+
+export {
+    setTitle,
+    setStore,
+    getStore,
+    clearStore,
+    setCookie,
+    getCookie,
+    getQueryStringByName
+}

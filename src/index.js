@@ -9,8 +9,5 @@ import 'element-theme-default';
 import "./utility/GlobalIIFE"              // 入场自执行
 
 
-
-
-
 ReactDOM.render(<App />, document.getElementById('root'));
 serviceWorker.unregister();

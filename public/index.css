@@ -31,9 +31,30 @@ code {
 .m20{
     margin:20px;
 }
+
+.mt20{
+    margin-top: 20px;
+}
+
 .ml20{
     margin-left: 20px;
 }
 .p20{
     padding: 20px;
+}
+
+.fl{
+    float: left;
+}
+
+.space-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
