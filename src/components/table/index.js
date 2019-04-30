@@ -4,24 +4,25 @@ import {Button, Table} from 'antd';
 import Api from "../../api/api";
 
 export default class TableList extends Component {
-    constructor(props) {
-        super(props)
-        this.dataList =this.props.data
-    }
-
     render() {
+        const {deleteResource} = this.props
         const columns = [{
-            title: 'id',
-            dataIndex: '_id',
-            key: '_id',
-        }, {
             title: '权限名称',
             dataIndex: 'name',
             key: 'name',
         }, {
             title: '权限等级',
-            dataIndex: 'age',
-            key: 'age',
+            dataIndex: 'grade',
+            key: 'grade',
+            align: "center"
+        },{
+            title: '权限状态',
+            dataIndex: 'state',
+            key: 'state',
+            align: "center",
+            render : (text, record) => {
+                return record.state ? "可用":"不可用"
+            }
         }, {
             title: '权限描述',
             dataIndex: 'address',
@@ -37,7 +38,7 @@ export default class TableList extends Component {
             render: (text, record) => (
                 <div className="space-between">
                     <Button icon="edit">修改</Button>
-                    <Button type="danger" icon="close" onClick={this.deleteResource.bind(record)}>删除</Button>
+                    <Button type="danger" icon="close" onClick={deleteResource.bind(this,record._id)}>删除</Button>
                 </div>
             ),
         }];
@@ -46,9 +47,5 @@ export default class TableList extends Component {
                 <Table dataSource={this.props.data.data} columns={columns} rowKey={record => record._id} bordered/>
             </div>
         );
-    }
-
-    deleteResource() {
-        Api.deleteresource({_id: this._id});
     }
 }

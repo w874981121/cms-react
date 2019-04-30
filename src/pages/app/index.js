@@ -34,14 +34,14 @@ export default class App extends Component {
                                 <Breadcrumb.Item>App</Breadcrumb.Item>
                             </Breadcrumb>
                             {/*内容区*/}
-                            <Content style={{minHeight: 400,background: "#fff"}}>
+                            <Content  style={{background: '#fff',overflow: 'auto'}}>
                                 <RouterIndex/>
                             </Content>
+                            <Footer style={{ textAlign: 'center' }}>
+                                <Footers/>
+                            </Footer>
                         </Layout>
                     </Layout>
-                    <Footer>
-                        <Footers/>
-                    </Footer>
                 </Layout>
             </HashRouter>
         );
