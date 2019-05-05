@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './index.scss'
 import {Button, Table} from 'antd';
-import Api from "../../api/api";
 
 export default class TableList extends Component {
     render() {
