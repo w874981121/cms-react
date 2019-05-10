@@ -9,6 +9,11 @@ export default class TableList extends Component {
             title: '权限名称',
             dataIndex: 'name',
             key: 'name',
+        },{
+            title: '权限ID',
+            dataIndex: 'id',
+            key: 'id',
+            align: "center"
         }, {
             title: '权限等级',
             dataIndex: 'grade',

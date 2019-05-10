@@ -50,9 +50,9 @@ const HEADER = {
 const INTERFACE = {
     "QD_CMS": {
         "uploadImg": ["post", "/upload"],  //上传图片
-        "addresource": ["post", "/rbac/addresource"],  //添加权限
-        "queryresources": ["get", "/rbac/queryresources"],  //查询权限
-        "deleteresource": ["get", "/rbac/deleteresource"]    //删除权限
+        "addresource": ["post", "/api/v1/power/rbac/addresource"],  //添加权限
+        "queryresources": ["get", "/api/v1/power/rbac/queryresources"],  //查询权限
+        "deleteresource": ["get", "/api/v1/power/rbac/deleteresource"]    //删除权限
     },
 };
 
