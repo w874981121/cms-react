@@ -5,9 +5,15 @@ import {
 const {Option} = Select;
 
 
-class AddResource extends Component {
+class ModifyResource extends Component {
     constructor(props){
         super(props)
+        console.log(this.props)
+        this.objectFrom={
+            name:"",
+            address:"",
+            grade:"0"
+        };
     }
 
     render() {
@@ -15,6 +21,9 @@ class AddResource extends Component {
         const {
             visible, onCancel, onCreate
         } = this.props;
+        if(this.props.modifyObject){
+            this.objectFrom = Object.assign({},this.props.modifyObject);
+        }
         return (
             <Modal
                 visible={visible}
@@ -30,6 +39,7 @@ class AddResource extends Component {
                         {getFieldDecorator(
                             "name", {
                                 rules: [{required: true, whitespace:true, message: '请输入名称!'}],
+                                initialValue: this.objectFrom["name"],
                             },
                         )(
                             <Input prefix={<Icon type="audit" style={{color: '#cccccc'}}/>} placeholder="输入权限名称"/>
@@ -39,7 +49,7 @@ class AddResource extends Component {
                         {getFieldDecorator(
                             "grade", {
                                 rules: [{required: true}],
-                                initialValue:"0",
+                                initialValue:this.objectFrom["grade"],
                             },
                         )(
                             <Select>
@@ -54,6 +64,7 @@ class AddResource extends Component {
                         {getFieldDecorator(
                             "address", {
                                 rules: [{required: true, whitespace:true, message: '请输入描述!'}],
+                                initialValue:this.objectFrom["address"],
                             },
                         )(
                             <Input prefix={<Icon type="highlight" style={{color: '#cccccc'}}/>} placeholder="输入描述"/>
@@ -66,4 +77,4 @@ class AddResource extends Component {
 }
 
 
-export default Form.create({name: 'AddResource'})(AddResource);
+export default Form.create({name: 'ModifyResource'})(ModifyResource);

@@ -4,7 +4,7 @@ import {Button, Table} from 'antd';
 
 export default class TableList extends Component {
     render() {
-        const {deleteResource} = this.props
+        const {deleteResource,showModify} = this.props
         const columns = [{
             title: '权限名称',
             dataIndex: 'name',
@@ -34,21 +34,21 @@ export default class TableList extends Component {
             align: "center"
         }, {
             title: '操作',
-            dataIndex: 'id',
+            dataIndex: '_id',
             columnWidth: "30",
-            key: 'id',
+            key: '_id',
             align: "center",
             width: "210px",
             render: (text, record) => (
                 <div className="space-between">
-                    <Button icon="edit">修改</Button>
+                    <Button icon="edit" onClick={showModify.bind(this,record)}>修改</Button>
                     <Button type="danger" icon="close" onClick={deleteResource.bind(this,record._id)}>删除</Button>
                 </div>
             ),
         }];
         return (
             <div className="TableList m20">
-                <Table dataSource={this.props.data.data} columns={columns} rowKey={record => record._id} bordered/>
+                <Table dataSource={this.props.data.data} columns={columns} rowKey={record => record.id} bordered/>
             </div>
         );
     }
